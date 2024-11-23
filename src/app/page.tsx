@@ -80,7 +80,10 @@ export default async function StreamingNetworkLanding() {
                     <Image src="https://m.media-amazon.com/images/M/MV5BZjgzY2QyNzItNDhhYi00ZWIwLWFjN2UtZDJkN2MxYWNjMmJjXkEyXkFqcGc@._V1_SX300.jpg" alt="The Big Bang Theory" width={200} height={200} />
                   </Link>
                   <Link href="https://embed.warezcdn.link/filme/tt9218128">
-                    <Image src="https://m.media-amazon.com/images/M/MV5BMWYzZTM5ZGQtOGE5My00NmM2LWFlMDEtMGNjYjdmOWM1MzA1XkEyXkFqcGc@._V1_SX300.jpg" alt="Barbie" width={200} height={200} />
+                    <Image src="https://m.media-amazon.com/images/M/MV5BMWYzZTM5ZGQtOGE5My00NmM2LWFlMDEtMGNjYjdmOWM1MzA1XkEyXkFqcGc@._V1_SX300.jpg" alt="Gladiador II" width={200} height={200} />
+                  </Link>
+                  <Link href="https://embed.warezcdn.link/filme/tt26731216">
+                    <Image src="https://m.media-amazon.com/images/M/MV5BNTViOGIzNWEtMzY5OC00OWQxLWE4ZjAtZDFkMGE0NjNhM2QwXkEyXkFqcGc@._V1_SX300.jpg" alt="Barbie" width={200} height={200} />
                   </Link>
                 </div>
               </div>
