@@ -185,7 +185,14 @@ function FeatureCard({ icon, title, description }: FeatureCardProps) {
   )
 }
 
-function PricingCard({ title, price, description, features }) {
+
+interface PricingCardProps {
+  title: string;
+  price: string;
+  description: string;
+  features: string[];
+}
+function PricingCard({ title, price, description, features }: PricingCardProps) {
   return (
     <Card>
       <CardHeader>
