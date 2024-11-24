@@ -27,3 +27,46 @@ You can check out the [create-t3-app GitHub repository](https://github.com/t3-os
 ## How do I deploy this?
 
 Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+
+
+
+
+
+
+
+
+
+
+
+
+
+LISTA DE REPOSITÓRIOS QUE SALVA VIDAS
+
+
+- Ideais de projetos:
+* https://lnkd.in/ey_dX_j5
+* https://lnkd.in/ezjVNFa6
+
+
+- Treinar para entrevistas técnicas (Living code):
+* https://lnkd.in/eEpGUmzy
+* https://lnkd.in/eQarJPBb
+* https://lnkd.in/edPw7J78
+
+- APIs grátis:
+* https://lnkd.in/eE465w47
+
+- RoadMaps:
+* https://lnkd.in/eH-65Tve
+* https://lnkd.in/e22DT8_y
+
+- Eventos da area Tech Brasil (Ótimo para networking):
+* https://lnkd.in/eXheCkqB
+
+- Padrões de Commits:
+* https://lnkd.in/eE465w47
+
+- Templates para README:
+* https://lnkd.in/ecrZuH9e
+* https://lnkd.in/edKf9EN8
+* https://lnkd.in/e2hmQCuD
