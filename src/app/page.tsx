@@ -1,12 +1,12 @@
 import * as React from "react"
 import Link from "next/link"
-import Image from "next/image"
-import { Play, Tv, Film, Music, Smartphone, Globe, Check, Menu } from 'lucide-react'
-
+import { Play, Tv, Film, Music, Smartphone, Globe, Check } from 'lucide-react'
+import Navbar from "./_components/navbar"
 import { auth } from "@/server/auth"
 import { api, HydrateClient } from "@/trpc/server"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import Contents from "./_components/contents"
 import {
   Card,
   CardContent,
@@ -15,7 +15,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+
 
 export default async function StreamingNetworkLanding() {
   const session = await auth();
@@ -26,64 +26,10 @@ export default async function StreamingNetworkLanding() {
 
   return (
     <HydrateClient>
+      <Navbar />
       <div className="flex flex-col min-h-screen">
         <div className="max-w-[1920px] mx-auto w-full">
-          <header className="px-4 lg:px-6 h-14 flex items-center justify-between">
-            <Link className="flex items-center justify-center" href="#">
-              <Play className="h-6 w-6 text-primary" />
-              <span className="ml-2 text-2xl font-bold text-primary">Stream Live</span>
-            </Link>
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="ghost" className="p-0 lg:hidden">
-                  <Menu className="h-6 w-6" />
-                  <span className="sr-only">Toggle menu</span>
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right">
-                <nav className="flex flex-col gap-4">
-                  <Link className="text-sm font-medium hover:underline underline-offset-4" href="#features">
-                    Features
-                  </Link>
-                  <Link className="text-sm font-medium hover:underline underline-offset-4" href="#pricing">
-                    Pricing
-                  </Link>
-                  <Link className="text-sm font-medium hover:underline underline-offset-4" href="#about">
-                    About
-                  </Link>
-                  {!session?.user ? (
-                    <Link className="text-sm font-medium hover:underline underline-offset-4" href="/api/auth/signin">
-                      Login
-                    </Link>
-                  ) : (
-                    <Link className="text-sm font-medium hover:underline underline-offset-4" href="/api/auth/signout">
-                      Logout
-                    </Link>
-                  )}
-                </nav>
-              </SheetContent>
-            </Sheet>
-            <nav className="hidden lg:flex gap-4 sm:gap-6">
-              <Link className="text-sm font-medium hover:underline underline-offset-4" href="#features">
-                Features
-              </Link>
-              <Link className="text-sm font-medium hover:underline underline-offset-4" href="#pricing">
-                Pricing
-              </Link>
-              <Link className="text-sm font-medium hover:underline underline-offset-4" href="#about">
-                About
-              </Link>
-              {!session?.user ? (
-                <Link className="text-sm font-medium hover:underline underline-offset-4" href="/api/auth/signin">
-                  Login
-                </Link>
-              ) : (
-                <Link className="text-sm font-medium hover:underline underline-offset-4" href="/api/auth/signout">
-                  Logout
-                </Link>
-              )}
-            </nav>
-          </header>
+          
           <main className="flex-1">
             <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
               <div className="container mx-auto px-4 md:px-6 max-w-7xl">
@@ -108,26 +54,7 @@ export default async function StreamingNetworkLanding() {
               <section className="w-full py-12 md:py-24 lg:py-32">
                 <div className="container mx-auto px-4 md:px-6 max-w-7xl">
                   <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8">Featured Content</h2>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-8 justify-items-center">
-                    <Link href="https://embed.warezcdn.link/serie/tt0898266" className="w-full max-w-[300px]">
-                      <Image src="https://m.media-amazon.com/images/M/MV5BZjgzY2QyNzItNDhhYi00ZWIwLWFjN2UtZDJkN2MxYWNjMmJjXkEyXkFqcGc@._V1_SX300.jpg" alt="The Big Bang Theory" width={300} height={300} className="w-full h-auto object-cover rounded-lg shadow-lg" />
-                    </Link>
-                    <Link href="https://embed.warezcdn.link/filme/tt9218128" className="w-full max-w-[300px]">
-                      <Image src="https://m.media-amazon.com/images/M/MV5BMWYzZTM5ZGQtOGE5My00NmM2LWFlMDEtMGNjYjdmOWM1MzA1XkEyXkFqcGc@._V1_SX300.jpg" alt="Gladiador II" width={300} height={300} className="w-full h-auto object-cover rounded-lg shadow-lg" />
-                    </Link>
-                    <Link href="https://embed.warezcdn.link/filme/tt26731216" className="w-full max-w-[300px]">
-                      <Image src="https://m.media-amazon.com/images/M/MV5BNTViOGIzNWEtMzY5OC00OWQxLWE4ZjAtZDFkMGE0NjNhM2QwXkEyXkFqcGc@._V1_SX300.jpg" alt="A Forja" width={300} height={300} className="w-full h-auto object-cover rounded-lg shadow-lg" />
-                    </Link>
-                    <Link href="https://embed.warezcdn.link/serie/tt22248376" className="w-full max-w-[300px]">
-                      <Image src="https://m.media-amazon.com/images/M/MV5BZTI4ZGMxN2UtODlkYS00MTBjLWE1YzctYzc3NDViMGI0ZmJmXkEyXkFqcGc@._V1_SX300.jpg" alt="Frieren e a Jornada para o Além" width={300} height={300} className="w-full h-auto object-cover rounded-lg shadow-lg" />
-                    </Link>
-                    <Link href="https://embed.warezcdn.link/serie/tt1355642" className="w-full max-w-[300px]">
-                      <Image src="https://m.media-amazon.com/images/M/MV5BMzNiODA5NjYtYWExZS00OTc4LTg3N2ItYWYwYTUyYmM5MWViXkEyXkFqcGc@._V1_SX300.jpg" alt="Fullmetal Alchemist: Brotherhood" width={300} height={300} className="w-full h-auto object-cover rounded-lg shadow-lg" />
-                    </Link>
-                    <Link href="https://embed.warezcdn.link/serie/tt2098220" className="w-full max-w-[300px]">
-                      <Image src="https://m.media-amazon.com/images/M/MV5BYzYxOTlkYzctNGY2MC00MjNjLWIxOWMtY2QwYjcxZWIwMmEwXkEyXkFqcGc@._V1_SX300.jpg" alt="Hunter x Hunter" width={300} height={300} className="w-full h-auto object-cover rounded-lg shadow-lg" />
-                    </Link>
-                  </div>
+                  <Contents />
                 </div>
               </section>
             )}
