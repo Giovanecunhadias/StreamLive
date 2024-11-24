@@ -96,10 +96,11 @@ export default async function StreamingNetworkLanding() {
                       Stream your favorite movies, TV shows, and music anytime, anywhere. One subscription, endless entertainment.
                     </p>
                   </div>
+                  {!session?.user&&
                   <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                     <Button><Link href={"/api/auth/signin"}>Get Started</Link></Button>
                     <Button variant="outline">Learn More</Button>
-                  </div>
+                  </div>}
                 </div>
               </div>
             </section>
