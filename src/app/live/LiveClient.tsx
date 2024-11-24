@@ -2,7 +2,14 @@
 
 import React, { useEffect } from "react";
 
-export default function LiveClient({ session }: { session: any }) {
+// Define a interface para a sessão
+interface Session {
+    user?: {
+        id: string;
+    };
+}
+
+export default function LiveClient({ session }: { session: Session }) {
     useEffect(() => {
         if (!session?.user) {
             // Redireciona para a página inicial se não houver usuário autenticado
@@ -17,7 +24,7 @@ export default function LiveClient({ session }: { session: any }) {
     return (
         <>
             <h1>Live</h1>
-            <div>Em breve você poderá streamar suas próprias lives</div>
+            <div>Em breve você poderá streamar suas próprias lives.</div>
         </>
     );
 }
