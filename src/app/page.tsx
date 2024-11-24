@@ -97,7 +97,7 @@ export default async function StreamingNetworkLanding() {
                     </p>
                   </div>
                   <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <Button>Get Started</Button>
+                    <Button><Link href={"/api/auth/signin"}>Get Started</Link></Button>
                     <Button variant="outline">Learn More</Button>
                   </div>
                 </div>
@@ -122,6 +122,9 @@ export default async function StreamingNetworkLanding() {
                     </Link>
                     <Link href="https://embed.warezcdn.link/serie/tt1355642" className="w-full max-w-[300px]">
                       <Image src="https://m.media-amazon.com/images/M/MV5BMzNiODA5NjYtYWExZS00OTc4LTg3N2ItYWYwYTUyYmM5MWViXkEyXkFqcGc@._V1_SX300.jpg" alt="Fullmetal Alchemist: Brotherhood" width={300} height={300} className="w-full h-auto object-cover rounded-lg shadow-lg" />
+                    </Link>
+                    <Link href="https://embed.warezcdn.link/serie/tt2098220" className="w-full max-w-[300px]">
+                      <Image src="https://m.media-amazon.com/images/M/MV5BYzYxOTlkYzctNGY2MC00MjNjLWIxOWMtY2QwYjcxZWIwMmEwXkEyXkFqcGc@._V1_SX300.jpg" alt="Hunter x Hunter" width={300} height={300} className="w-full h-auto object-cover rounded-lg shadow-lg" />
                     </Link>
                   </div>
                 </div>
@@ -197,7 +200,7 @@ export default async function StreamingNetworkLanding() {
             </section>
           </main>
           <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-            <p className="text-xs text-gray-500 dark:text-gray-400">© 2024 StreamNet. All rights reserved.</p>
+            <p className="text-xs text-gray-500 dark:text-gray-400">© 2024 Stream Live. All rights reserved.</p>
             <nav className="sm:ml-auto flex gap-4 sm:gap-6">
               <Link className="text-xs hover:underline underline-offset-4" href="#">
                 Terms of Service
