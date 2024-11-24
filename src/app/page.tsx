@@ -117,6 +117,12 @@ export default async function StreamingNetworkLanding() {
                     <Link href="https://embed.warezcdn.link/filme/tt26731216" className="w-full max-w-[300px]">
                       <Image src="https://m.media-amazon.com/images/M/MV5BNTViOGIzNWEtMzY5OC00OWQxLWE4ZjAtZDFkMGE0NjNhM2QwXkEyXkFqcGc@._V1_SX300.jpg" alt="A Forja" width={300} height={300} className="w-full h-auto object-cover rounded-lg shadow-lg" />
                     </Link>
+                    <Link href="https://embed.warezcdn.link/serie/tt22248376" className="w-full max-w-[300px]">
+                      <Image src="https://m.media-amazon.com/images/M/MV5BZTI4ZGMxN2UtODlkYS00MTBjLWE1YzctYzc3NDViMGI0ZmJmXkEyXkFqcGc@._V1_SX300.jpg" alt="Frieren e a Jornada para o Além" width={300} height={300} className="w-full h-auto object-cover rounded-lg shadow-lg" />
+                    </Link>
+                    <Link href="https://embed.warezcdn.link/serie/tt1355642" className="w-full max-w-[300px]">
+                      <Image src="https://m.media-amazon.com/images/M/MV5BMzNiODA5NjYtYWExZS00OTc4LTg3N2ItYWYwYTUyYmM5MWViXkEyXkFqcGc@._V1_SX300.jpg" alt="Fullmetal Alchemist: Brotherhood" width={300} height={300} className="w-full h-auto object-cover rounded-lg shadow-lg" />
+                    </Link>
                   </div>
                 </div>
               </section>
