@@ -1,7 +1,7 @@
 import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Play, Tv, Film, Music, Smartphone, Globe, Check } from 'lucide-react'
+import { Play, Tv, Film, Music, Smartphone, Globe, Check, Menu } from 'lucide-react'
 
 import { auth } from "@/server/auth"
 import { api, HydrateClient } from "@/trpc/server"
@@ -15,6 +15,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 export default async function StreamingNetworkLanding() {
   const session = await auth();
@@ -26,12 +27,42 @@ export default async function StreamingNetworkLanding() {
   return (
     <HydrateClient>
       <div className="flex flex-col min-h-screen">
-        <header className="px-4 lg:px-6 h-14 flex items-center">
+        <header className="px-4 lg:px-6 h-14 flex items-center justify-between">
           <Link className="flex items-center justify-center" href="#">
             <Play className="h-6 w-6 text-primary" />
             <span className="ml-2 text-2xl font-bold text-primary">Stream Live</span>
           </Link>
-          <nav className="ml-auto flex gap-4 sm:gap-6">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" className="p-0 lg:hidden">
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Toggle menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right">
+              <nav className="flex flex-col gap-4">
+                <Link className="text-sm font-medium hover:underline underline-offset-4" href="#features">
+                  Features
+                </Link>
+                <Link className="text-sm font-medium hover:underline underline-offset-4" href="#pricing">
+                  Pricing
+                </Link>
+                <Link className="text-sm font-medium hover:underline underline-offset-4" href="#about">
+                  About
+                </Link>
+                {!session?.user ? (
+                  <Link className="text-sm font-medium hover:underline underline-offset-4" href="/api/auth/signin">
+                    Login
+                  </Link>
+                ) : (
+                  <Link className="text-sm font-medium hover:underline underline-offset-4" href="/api/auth/signout">
+                    Logout
+                  </Link>
+                )}
+              </nav>
+            </SheetContent>
+          </Sheet>
+          <nav className="hidden lg:flex gap-4 sm:gap-6">
             <Link className="text-sm font-medium hover:underline underline-offset-4" href="#features">
               Features
             </Link>
@@ -64,7 +95,7 @@ export default async function StreamingNetworkLanding() {
                     Stream your favorite movies, TV shows, and music anytime, anywhere. One subscription, endless entertainment.
                   </p>
                 </div>
-                <div className="space-x-4">
+                <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                   <Button>Get Started</Button>
                   <Button variant="outline">Learn More</Button>
                 </div>
@@ -75,15 +106,15 @@ export default async function StreamingNetworkLanding() {
             <section className="w-full py-12 md:py-24 lg:py-32">
               <div className="container px-4 md:px-6">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8">Featured Content</h2>
-                <div className="flex flex-wrap justify-center gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
                   <Link href="https://embed.warezcdn.link/serie/tt0898266">
-                    <Image src="https://m.media-amazon.com/images/M/MV5BZjgzY2QyNzItNDhhYi00ZWIwLWFjN2UtZDJkN2MxYWNjMmJjXkEyXkFqcGc@._V1_SX300.jpg" alt="The Big Bang Theory" width={200} height={200} />
+                    <Image src="https://m.media-amazon.com/images/M/MV5BZjgzY2QyNzItNDhhYi00ZWIwLWFjN2UtZDJkN2MxYWNjMmJjXkEyXkFqcGc@._V1_SX300.jpg" alt="The Big Bang Theory" width={200} height={200} className="w-full h-auto" />
                   </Link>
                   <Link href="https://embed.warezcdn.link/filme/tt9218128">
-                    <Image src="https://m.media-amazon.com/images/M/MV5BMWYzZTM5ZGQtOGE5My00NmM2LWFlMDEtMGNjYjdmOWM1MzA1XkEyXkFqcGc@._V1_SX300.jpg" alt="Gladiador II" width={200} height={200} />
+                    <Image src="https://m.media-amazon.com/images/M/MV5BMWYzZTM5ZGQtOGE5My00NmM2LWFlMDEtMGNjYjdmOWM1MzA1XkEyXkFqcGc@._V1_SX300.jpg" alt="Gladiador II" width={200} height={200} className="w-full h-auto" />
                   </Link>
                   <Link href="https://embed.warezcdn.link/filme/tt26731216">
-                    <Image src="https://m.media-amazon.com/images/M/MV5BNTViOGIzNWEtMzY5OC00OWQxLWE4ZjAtZDFkMGE0NjNhM2QwXkEyXkFqcGc@._V1_SX300.jpg" alt="A Forja" width={200} height={200} />
+                    <Image src="https://m.media-amazon.com/images/M/MV5BNTViOGIzNWEtMzY5OC00OWQxLWE4ZjAtZDFkMGE0NjNhM2QwXkEyXkFqcGc@._V1_SX300.jpg" alt="A Forja" width={200} height={200} className="w-full h-auto" />
                   </Link>
                 </div>
               </div>
@@ -92,7 +123,7 @@ export default async function StreamingNetworkLanding() {
           <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
             <div className="container px-4 md:px-6">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">Features</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <FeatureCard
                   icon={<Tv className="h-10 w-10 mb-4 text-primary" />}
                   title="TV Shows"
@@ -129,7 +160,7 @@ export default async function StreamingNetworkLanding() {
           <section id="pricing" className="w-full py-12 md:py-24 lg:py-32">
             <div className="container px-4 md:px-6">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">Pricing Plans</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <PricingCard
                   title="Basic"
                   price="$8.99"
@@ -188,13 +219,13 @@ function FeatureCard({ icon, title, description }: FeatureCardProps) {
   )
 }
 
-
 interface PricingCardProps {
   title: string;
   price: string;
   description: string;
   features: string[];
 }
+
 function PricingCard({ title, price, description, features }: PricingCardProps) {
   return (
     <Card>
@@ -208,7 +239,7 @@ function PricingCard({ title, price, description, features }: PricingCardProps) 
         <ul className="mt-4 space-y-2">
           {features.map((feature, index) => (
             <li key={index} className="flex items-center">
-              <Check className="text-green-500 mr-2 h-4 w-4" />
+              <Check className="text-green-500 mr-2 h-4 w-4 flex-shrink-0" />
               <span>{feature}</span>
             </li>
           ))}
