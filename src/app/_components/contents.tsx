@@ -23,6 +23,9 @@ export default function Contents() {
                     <Link href="https://embed.warezcdn.link/serie/tt2098220" className="w-full max-w-[300px]">
                       <Image src="https://m.media-amazon.com/images/M/MV5BYzYxOTlkYzctNGY2MC00MjNjLWIxOWMtY2QwYjcxZWIwMmEwXkEyXkFqcGc@._V1_SX300.jpg" alt="Hunter x Hunter" width={300} height={300} className="w-full h-auto object-cover rounded-lg shadow-lg" />
                     </Link>
+                    <Link href="https://embed.warezcdn.link/serie/tt1632701" className="w-full max-w-[300px]">
+                      <Image src="https://m.media-amazon.com/images/M/MV5BYmE4MmNjZjUtNTEyNy00NTZiLWE4NTktYjM2NjBhYzQ1N2IzXkEyXkFqcGc@._V1_SX300.jpg" alt="Suits Homens de Terno" width={300} height={300} className="w-full h-auto object-cover rounded-lg shadow-lg" />
+                    </Link>
                 </div>
     )
 }
