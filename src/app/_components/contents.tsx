@@ -26,6 +26,10 @@ export default function Contents() {
                     <Link href="https://embed.warezcdn.link/serie/tt1632701" className="w-full max-w-[300px]">
                       <Image src="https://m.media-amazon.com/images/M/MV5BYmE4MmNjZjUtNTEyNy00NTZiLWE4NTktYjM2NjBhYzQ1N2IzXkEyXkFqcGc@._V1_SX300.jpg" alt="Suits Homens de Terno" width={300} height={300} className="w-full h-auto object-cover rounded-lg shadow-lg" />
                     </Link>
+                    <Link href="https://embed.warezcdn.link/serie/tt14986406" className="w-full max-w-[300px]">
+                      <Image src="https://m.media-amazon.com/images/M/MV5BMjgyM2QzMjAtOGZjOS00OGFkLTkxZGYtMDJjZGM5MzIzYmM3XkEyXkFqcGc@._V1_SX300.jpg" alt="Bleach: Thousand-Year Blood War" width={300} height={300} className="w-full h-auto object-cover rounded-lg shadow-lg" />
+                    </Link>
+                    
                 </div>
     )
 }
